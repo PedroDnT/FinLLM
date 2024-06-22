@@ -24,7 +24,7 @@ def preprocess_data(income_statement, balance_sheet):
 
 def create_prompt(income_statement, balance_sheet):
     prompt = f"""
-    Analyze the following financial statements to predict if the company's earnings will increase or decrease next year. Follow these steps:
+    Analyze the following financial statements to predict if the company's earnings will increase or decrease next year.Maintain response under 500 tokens Follow these steps:
 
     1. Identify notable changes in financial statement items.
     2. Compute key financial ratios (without limiting the set of ratios).
@@ -41,8 +41,6 @@ def create_prompt(income_statement, balance_sheet):
     {balance_sheet.to_string()}
 
     Structure your response as follows:
-    1. Notable Changes: [Your analysis as consice as possible]
-    2. Key Ratios: [Your calculations, simply]
     3. Economic Interpretations: [Your interpretations as consice as possible]
     4. Earnings Prediction: [Increase/Decrease]
     5. Rationale: [Your explanation briefly]
@@ -52,6 +50,7 @@ def create_prompt(income_statement, balance_sheet):
     Begin your response with the prediction in the format: 'next_year; earnings_direction; magnitude; confidence_score'
     """
     return prompt
+
 def extract_prediction_from_rationale(rationale):
     first_line = rationale.split('\n')[0]
     if ";" in first_line:
@@ -104,14 +103,16 @@ def get_predictions(company_code, output_type="B"):
     
     return predictions
 
-
-
 if __name__ == "__main__":
-    company_code = input("enter cvm code") # Replace with actual company code\
-    # ask for output type
-    output_type = input("Enter output type (A/B): ") # Choose between detailed analysis (A) or prediction only (B)
-    predictions = get_predictions(company_code, output_type)
-    for prediction in predictions:
-        print(f"Prediction for {prediction[0]}: {prediction[1]}")
-
+    # Example usage
+    # Predict earnings for a company with a given cvm_code
+    # asks for cvm code as input 
+    cvm_code = input("Enter the cvm_code: ")
+    #asks for output type as input explaining the output type
+    output_type = input("Enter the output type (A for full analysis, B for brief prediction): ")
+    #fetches the predictions
+    predictions = get_predictions(cvm_code, output_type)
+    #prints the predictions
+    for year, prediction in predictions:
+        print(f"Prediction for {year}: {prediction}")
 

@@ -50,7 +50,7 @@ def process_yearly_data(df, date_column):
         df[date_column] = pd.to_datetime(df[date_column])
         df = df.set_index(date_column)
         numeric_df = df.select_dtypes(include=['number'])
-        yearly_df = numeric_df.resample('A').sum()  # Use 'A' for annual resampling
+        yearly_df = numeric_df.resample('YE').sum()  # Use 'A' for annual resampling
         yearly_df.index = yearly_df.index.year
         yearly_df = yearly_df.transpose()
         return yearly_df.reset_index()
