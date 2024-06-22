@@ -1,0 +1,5 @@
+cvm_code,trade_name,b3_trade_name,b3_issuer_code,b3_segment,b3_sector,available_years
+1,CompanyA,TRADEA,CODEA,SegmentA,SectorA,2
+2,CompanyB,TRADEB,CODEB,SegmentB,SectorB,0
+3,CompanyC,TRADEC,CODEC,SegmentC,SectorC,0
+1,ModifiedCompanyA,TRADEA,CODEA,SegmentA,SectorA,2

@@ -1,0 +1,83 @@
+ddmw-py3.12) pedro@MacBook-Pro-de-Pedro ddmw % python openaicall.py
+2024-06-21 19:19:04,712 - INFO - Connecting to database with URL: postgresql://postgres.trrwdbeylztbfswvrhlr:55251818ToPe$.env@aws-0-sa-east-1.pooler.supabase.com:6543/postgres
+enter cvm code23825
+Enter output type (A/B): A
+/Users/pedro/Documents/ddmw/fetcherv4.py:49: FutureWarning: 'A' is deprecated and will be removed in a future version, please use 'YE' instead.
+  yearly_df = numeric_df.resample('A').sum()  # Use 'A' for annual resampling
+2024-06-21 19:19:12,308 - WARNING - Columns ['period_end'] not found in DataFrame
+x^X2024-06-21 19:19:24,467 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+^R
+ 
+çç^X^Xxx2024-06-21 19:19:41,316 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-21 19:19:54,730 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-21 19:20:12,242 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-21 19:20:27,704 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-06-21 19:20:44,730 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+Prediction for 2019: next_year; increase
+
+Panel A. Trend Analysis:
+The trend analysis shows consistent increases in several sectors which indicate a promising future for the company. There is a consistent rise in 'net_income' from 2014 to 2018 with a noticeable spike in 2018. Moreover, 'gross_income' and 'ebit' also show a consistent upward trend. 'Net_sales' increase steadily, indicating the company's capacity to generate revenue is improving.
+
+Panel B. Ratio Analysis:
+The debt-to-equity ratio seems to be decreasing over the years since the 'equity' number is rising at a faster pace than 'loans'. The company's current ratio (current_assets/current_liabilities) is improving, meaning the company is becoming more capable of paying off its debts. Another indicator of financial health, the net profit margin, (net_income/net_sales) has also been showing an increase.
+
+Panel C. Rationale:
+The reason for predicting an increase in the company's earnings next year lies in the upward trend in the company's income and sales and its improving financial ratios. It indicates that the company is not only successful in escalating its revenues but is also managing its costs and liabilities efficiently. Its solid performance in the past suggests it has the potential to continue this growth trajectory. However, external factors like market conditions and business climate could significantly impact this forecast.
+Prediction for 2020: next_year; increase
+
+Panel A. Trend Analysis:
+Upon observing the income statement and the balance sheet, it's clear that the company has shown a consistent upward trend in net sales, gross income, and net income over the five-year period (2015-2019). Net sales have increased from approximately 1 billion to 3.8 billion, along with the gross income and net income. This suggests a positive trend in the company's financial performance. Additionally, on the balance sheet, total assets and equity have also increased significantly, indicating growth and consistent reinvestment in the company's equity.
+
+Panel B. Ratio Analysis:
+Although the exact ratios cannot be determined due to the lack of specific enumeration, a loosely adhered conception can still be acknowledged. In relation to liquidity, both current assets and current liabilities have been on the rise over the definite span. However, the ratio of current assets to current liabilities has improved over the years indicating stronger liquidity. Additionally, the steadily increasing equity and total assets substantiates that the company's return on equity could also be improving; a positive sign for potential growth and profitability.
+
+Panel C. Rationale:
+The financial performance of the company has shown a consistent uptrend in terms of net sales, gross income, net income, and equity. The growth in the company's sales and income, along with improved liquidity and return on equity ratios, reflects the company's improved operational efficiencies, financial stability, and effective cost management. The company has also consistently raised its equity indicating investor confidence and effective deployment of investment. Therefore, based on the past and current performance, it is reasonable to predict that the company's earnings would increase next year.
+Prediction for 2021: next_year; earnings_increase
+
+Panel A. Trend Analysis:
+Evidently, the trend line shows an overall progressive increase in key indicators such as net income, net sales, and gross income over the last five years. Despite a dip from 2019 to 2020, the general trend is positive. 
+
+Panel B. Ratio Analysis:
+The current ratio (current assets/current liabilities) has been consistently above 1, indicating a good financial health as the company always has enough assets to cover short-term obligations if they fall due immediately. The continued growth in equity demonstrates the increasing value of the company to its shareholders as well. The net profit margin (net income/net sales) has also increased over the years, suggesting the company is becoming more efficient with cost control.
+
+Panel C. Rationale:
+Given the trend and ratio analysis, the earnings of the company are predicted to increase next year. This is due to the healthy financial ratios; the growth in net income, gross income, and net sales; in addition to an increasing equity value which signifies an improving financial health. While there was a dip in net income in 2020, this could be attributed to external issues such as the pandemic and hence, it is assessed as a temporary setback. Considering all these factors, I predict a rise in earnings next year.
+Prediction for 2022: next_year; earnings_increase
+
+Panel A. Trend Analysis:
+The net income from the company's continued operations has shown a steady increase from 2017 to 2021. Although there was a slight dip in 2020, the upward trend resumed in 2021 with a significant increase. Net sales have also seen a steady growth from 2017 to 2021, signaling strong operational performance. 
+
+The increasing trend in total assets over the past years indicates a healthy financial position for the company. However, the increasing trend in total liabilities suggests the company is increasing its debt. Nonetheless, the company’s equity has also been growing. 
+
+Panel B. Ratio Analysis:
+From a profitability perspective, there's a positive progression. The Company's profit margin (net income/net sales), despite being low, has improved each year. Conversely, the debt-to-equity ratio (total liabilities/total equity) has also risen. This suggests that the company is increasingly using borrowed funds for its operations, which may subsequently increase its financial risk.
+
+Panel C. Rationale:
+Despite an increasing debt, the expanding net sales and rising equity signal a positive outlook. Furthermore, the continual growth in the company's net income underpins the prediction of increased earnings for the following year. 
+
+However, it is crucial to factor in aspects that have not been analyzed here such as broader economic factors, industry trends, and company-specific factors like efficiency of management, product quality, and more. Therefore, the prediction of increased earnings should be taken with a note of caution as unforeseen circumstances such as market downturns or operational issues can still alter this anticipated trajectory.
+Prediction for 2023: Next Year; Decrease
+
+Panel A. Trend Analysis:
+The trend analysis suggests a decrease in the next year's earnings. In the past five years, net income has fluctuated, with a downward trend appearing in 2020 and increasing significantly in 2021, only to fall again in 2022. Net sales have consistently increased over the years; however, costs have risen even more steeply, leading to lower net income. 
+
+Panel B. Ratio Analysis:
+In terms of ratio analysis, the increase in costs has led to lower gross and operating profit margins. The return on assets (ROA) and return on equity (ROE) ratios have also been declining from 2020 to 2022, indicating inefficient use of resources. The debt ratio, on the other hand, sharply increased in 2021 and 2022, indicating the company is relying more on debt financing. The rising current liabilities to current assets ratio shows a potentially declining liquidity position. 
+
+Panel C. Rationale:
+The combination of trends and ratios suggests that while the company has been trying to expand (as in higher sales), it has done so by substantially increasing its costs and debt, leading to lower profits and increasing financial risk. The continued rise in costs, falling net income, and increasing debt trend suggest a risky financial position that could lead to a decrease in earnings in the next year. Moreover, economic uncertainties, potential increases in interest rates and inflation can add further pressure on the company's earnings in the future.
+Prediction for 2024: Next year; earnings are likely to decrease
+
+Panel A. Trend Analysis:
+The company's net income has been highly volatile over the past few years. From 2019 to 2021, there was an increase in net income, indicating an upturn in operations. However, a significant drop was noticed in 2022, and especially in 2023, the company recorded a negative net income. The net sales have significantly increased in the last five years, but the cost of goods sold also saw a steep increase, affecting gross income negatively. The company's assets and equity have been increasing, yet their current liabilities have also been rising, putting a pressure on the net income.
+
+Panel B. Ratio Analysis:
+Analyzing the company's financial ratios, we notice deteriorating financial health. The company's profit margin has been decreasing; it was positive in 2021, but turned negative in 2023, indicating the company is not generating enough profit from its sales. The current ratio (current assets / current liabilities) is decreasing (from 0.87 in 2019 to 0.72 in 2023), indicating a potential liquidity problem. Similarly, the debt to equity ratio has generally increased over the last five years, signifying that the company relies more heavily on borrowed money for its operations, which is risky.
+
+Panel C. Rationale: 
+The anticipated decrease in the company's earnings stems from the adverse trends exhibited in the company's financials. The operating expenses and costs of goods sold have consistently outpaced revenues. Although the firm's net sales have risen over the past five years, they've been offset by a surge in costs. The rising current liabilities and deteriorating ratios also indicate potential liquidity issues. Therefore, unless the company improves its cost efficiency and manages its liabilities better, it is likely that next year's earnings will decrease. This prediction is solely based on the provided data and does not consider the market conditions and other external factors.
+(ddmw-py3.12) pedro@MacBook-Pro-de-Pedro ddmw % 
+(ddmw-py3.12) pedro@MacBook-Pro-de-Pedro ddmw % python openaicall.py                                     
+2024-06-22 02:42:27,703 - INFO - Connecting to database with URL: postgresql://postgres.trrwdbeylztbfswvrhlr:55251818ToPe$.env@aws-0-sa-east-1.pooler.supabase.com:6543/postgres
+enter cvm code23825
