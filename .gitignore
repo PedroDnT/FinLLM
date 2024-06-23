@@ -2,9 +2,9 @@ oldbatch/
 .env
 data/
 .vscode/
-__pycache__/
+__pycache__ 
 .ipynb_checkpoints
-
+tests/
 # IPython
 profile_default/
 ipython_config.py
