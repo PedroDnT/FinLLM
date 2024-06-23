@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # retrieve list of cvm codes, checks for column available_years >= 6. return list of valid cvm codes
 import pandas as pd
 import os
+file = 'extended_company_data.csv'
 
 def check_data_availability(file):
     df = pd.read_csv(file)

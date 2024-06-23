@@ -86,9 +86,10 @@ def fetch_balance_sheet(cvm_code):
         
         # Add a row for the result of assets - equity - liabilities
         year_end_df.loc['check'] = year_end_df.loc['assets'] - year_end_df.loc['liabilities']
-        
-        return year_end_df.reset_index()
-    return df
+        year_end_df.reset_index(inplace=True)
+        year_end_df.rename(columns={'index': 'acc_entry'}, inplace=True)
+        year_end_df.set_index('acc_entry', inplace=True)
+    return year_end_df
 
 def fetch_income_statement(cvm_code):
     query = """
@@ -102,7 +103,8 @@ def fetch_income_statement(cvm_code):
     
     if not yearly_df.empty:
         yearly_df = clean_dataframe(yearly_df, drop_columns=['period_end'], drop_index='cvm_code')
-    
+    yearly_df.rename(columns={'index': 'acc_entry'}, inplace=True)
+    yearly_df.set_index('acc_entry', inplace=True)
     return yearly_df
 
 def fetch_cash_flow(cvm_code):
@@ -116,14 +118,9 @@ def fetch_cash_flow(cvm_code):
     yearly_df = process_yearly_data(df, 'period_end')
     
     if not yearly_df.empty:
-        logging.info(f"Columns before cleaning: {yearly_df.columns}")
-        yearly_df = clean_dataframe(yearly_df, drop_columns=['period_end'], drop_index='cvm_code', 
-                                    rename_columns={'financing': 'financing_cash_flow', 
-                                                    'investing': 'investing_cash_flow', 
-                                                    'operating': 'operating_cash_flow'})
-        logging.info(f"Columns after cleaning: {yearly_df.columns}")
-    
-    return yearly_df
+        yearly_df.rename(columns={'index': 'acc_entry'}, inplace=True)
+        yearly_df.set_index('acc_entry', inplace=True)
+        return yearly_df
 
 def fetch_company_data():
     """Fetch all data from the company table."""
@@ -145,6 +142,35 @@ def fetch_financials(cvm_code):
     cash_flow_df = fetch_cash_flow(cvm_code)
 
     return balance_sheet_df, income_statement_df, cash_flow_df
+
+def fetch_datx_y(cvm_code):
+    balance_sheet = fetch_balance_sheet(cvm_code)
+    income_statement = fetch_income_statement(cvm_code)
+
+    balance_sheet = balance_sheet.T
+    income_statement = income_statement.T
+    
+    income_statement.columns = [col.lower().replace(" ", "_") for col in income_statement.columns]
+    balance_sheet.columns = [col.lower().replace(" ", "_") for col in balance_sheet.columns]
+    y_is = len(income_statement.index.astype(int))
+    y_bs = len(balance_sheet.index.astype(int))
+    # return tuple of dataframes and years
+    tpl = {'income_statement': (income_statement, y_is), 'balance_sheet': (balance_sheet, y_bs)}
+    return tpl
+
+def retrieve_income_with_lenght(cvm_code):
+    income_statement = fetch_income_statement(cvm_code)
+    income_statement = income_statement.T
+    income_statement.columns = [col.lower().replace(" ", "_") for col in income_statement.columns]
+    y_is = len(income_statement.index.astype(int))
+    return {'len':(y_is),'income_statement':income_statement}
+
+def retrieve_balance_with_lenght(cvm_code):
+    balance_sheet = fetch_balance_sheet(cvm_code)
+    balance_sheet = balance_sheet.T
+    balance_sheet.columns = [col.lower().replace(" ", "_") for col in balance_sheet.columns]
+    y_bs = len(balance_sheet.index.astype(int))
+    return {'len':(y_bs),'balance_sheet':balance_sheet}
 
 if __name__ == "__main__":
     # Example usage
