@@ -5,7 +5,6 @@ import requests
 import json
 import pandas as pd
 
-
 def create_prompt(income_statement, balance_sheet):
     prompt = f"""
     Analyze the following financial statements to predict if the company's earnings will increase or decrease next year.
@@ -182,17 +181,6 @@ def get_predictions_ppxt(company_code):
     return predictions
 
 def process_response_ppxt(answer):
-    """
-    Processes a list of responses, extracts data from a specific JSON structure, 
-    and returns a formatted Pandas DataFrame.
-
-    Args:
-        answer: A list of dictionaries, where each dictionary represents a response. 
-
-    Returns:
-        A Pandas DataFrame with extracted data formatted into columns: 
-        'earnings direction', 'magnitude', 'confidence score', 'summary of rationale'.
-    """
     def clean_json(content):
         content = content.replace('\n', '').replace('\\"', '"')
         return json.loads(content)
@@ -213,6 +201,7 @@ def process_response_ppxt(answer):
     df['row_format'] = df.apply(lambda x: f"{x.get('earnings direction', '')}|{x.get('magnitude', '')}|{x.get('confidence score', '')}|{x.get('summary of rationale', '')}", axis=1)
     #drop row_format column
     df = df.drop(columns=['row_format'], axis=1)
+    # add column with company name
     return df
 
 if __name__ == "__main__":

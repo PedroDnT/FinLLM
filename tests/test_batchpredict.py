@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from batchpredict import get_predictions_for_valid_cvm_codes
+from oldbatch.batchpredict import get_predictions_for_valid_cvm_codes
 
 class TestBatchPredict(unittest.TestCase):
     @patch('batchpredict.get_predictions')
