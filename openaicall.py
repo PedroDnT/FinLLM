@@ -37,27 +37,49 @@ def create_prompt(income_statement, balance_sheet):
     return prompt
 
 def get_predictions(company_code):
+    # Create a dataframe to store the predictions
+    predictions = pd.DataFrame()
+
     # Fetch the data
     income_statement = retrieve_income_with_lenght(company_code)
     balance_sheet = retrieve_balance_with_lenght(company_code)
 
     bs_len = balance_sheet['len']
-    bs_numbers=balance_sheet['balance_sheet']
+    bs_numbers = balance_sheet['balance_sheet']
 
     is_len = income_statement['len']
-    is_numbers=income_statement['income_statement']
-    
-    if bs_len == is_len:
-        print("Data is consistent")
-    else:
+    is_numbers = income_statement['income_statement']
+    #print(is_numbers)
+    print("income_statement len: " + str(is_len))
+    print()
+    print("income_statement years: " + str(is_numbers))
+    print()
+    print("income_statement years index: " + str(is_numbers.index))
+
+
+    print("balance_sheet years: " + str(bs_len))
+    print()
+    print("balance_sheet years: " + str(bs_numbers))
+    print()
+    print("balance_sheet years index: " + str(bs_numbers.index))
+
+    is_numbers.index = is_numbers.index.astype(int)
+    bs_numbers.index = bs_numbers.index.astype(int)
+
+    if bs_len != is_len:
         print("Data is inconsistent")
+        return {"error": "Data inconsistency between balance sheet and income statement lengths"}
+
     # Determine available years for prediction
-    years = bs_numbers.index.astype(int)
-    predictions = []
+    years = bs_numbers.index
+    predictions_list = []
     
     for i in range(5, bs_len):
         historical_years = years[i-5:i]
-        prediction_year = years[i]
+        if not historical_years.isin(is_numbers.index).all():
+            print(f"Missing data for years: {historical_years[~historical_years.isin(is_numbers.index)]}")
+            continue
+
         
         # Create the prompt
         historical_income = is_numbers.loc[historical_years]
@@ -66,10 +88,9 @@ def get_predictions(company_code):
         
         # Use OpenAI API to analyze the financials
         response = openai.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4-turbo",
             temperature=0,
             top_p=1,
-            logprobs=True,
             messages=[
                 {"role": "system", "content": "You are a financial analyst."},
                 {"role": "user", "content": prompt}
@@ -78,8 +99,22 @@ def get_predictions(company_code):
         )
         
         resp = response.choices[0].message.content.strip()
-        
-    return resp
+        cleaned_json_string = resp.strip('```json\n')
+
+        # Convert the cleaned string to a JSON object
+        try:
+            json_obj = json.loads(cleaned_json_string)
+            predictions_list.append(json_obj)
+            #print year processed
+            print(f"Processed year: {json_obj['Year']}")
+        except json.JSONDecodeError as e:
+            print(f"Failed to decode JSON: {e}")
+    
+    # Convert the list of JSON objects to a DataFrame
+    if predictions_list:
+        predictions = pd.DataFrame(predictions_list)
+    
+    return predictions
 
 def get_predictions_ppxt(company_code):
     # Fetch the data

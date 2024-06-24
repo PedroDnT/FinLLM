@@ -8,22 +8,27 @@ Enter output type (A/B): A
 x^X2024-06-21 19:19:24,467 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 ^R
  
-çç^X^Xxx2024-06-21 19:19:41,316 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-06-21 19:19:54,730 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+ddmw-py3.12pedro@MacBook-Pro % source ~/.zshrc
 2024-06-21 19:20:12,242 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-06-21 19:20:27,704 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-06-21 19:20:44,730 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-Prediction for 2019: next_year; increase
 
 Panel A. Trend Analysis:
-The trend analysis shows consistent increases in several sectors which indicate a promising future for the company. There is a consistent rise in 'net_income' from 2014 to 2018 with a noticeable spike in 2018. Moreover, 'gross_income' and 'ebit' also show a consistent upward trend. 'Net_sales' increase steadily, indicating the company's capacity to generate revenue is improving.
+The trend analysis shows consistent increases in several sectors which indicate a promising future for the company. There is a consistent rise in 'net_income' from 2014 
+to 2018 with a noticeable spike in 2018. Moreover, 'gross_income' and 'ebit' also 
+show a consistent upward trend. 'Net_sales' increase steadily, indicating the company's capacity to generate revenue is improving.
 
 Panel B. Ratio Analysis:
-The debt-to-equity ratio seems to be decreasing over the years since the 'equity' number is rising at a faster pace than 'loans'. The company's current ratio (current_assets/current_liabilities) is improving, meaning the company is becoming more capable of paying off its debts. Another indicator of financial health, the net profit margin, (net_income/net_sales) has also been showing an increase.
+The debt-to-equity ratio seems to be decreasing over the years since the 'equity' number is rising at a faster pace than 'loans'. 
+The company's current ratio (current_assets/current_liabilities) is improving, meaning the company is becoming more capable of paying off its debts. 
+Another indicator of financial health, the net profit margin, (net_income/net_sales) has also been showing an increase.
 
 Panel C. Rationale:
-The reason for predicting an increase in the company's earnings next year lies in the upward trend in the company's income and sales and its improving financial ratios. It indicates that the company is not only successful in escalating its revenues but is also managing its costs and liabilities efficiently. Its solid performance in the past suggests it has the potential to continue this growth trajectory. However, external factors like market conditions and business climate could significantly impact this forecast.
-Prediction for 2020: next_year; increase
+The reason for predicting an increase in the company's earnings next year lies in the upward trend in the company's income and sales and its improving financial ratios. 
+It indicates that the company is not only successful in escalating its revenues but is also managing its costs and liabilities efficiently. 
+Its solid performance in the past suggests it has the potential to continue this growth trajectory. 
+However, external factors like market conditions and business climate could significantly impact this forecast.
+Prediction for 2020: next_year; increase; magnitude: moderate;confidence score	: 0.69
+---- Rolling logprob avg:0.73; Rolling F-Score: 0.488
 
 Panel A. Trend Analysis:
 Upon observing the income statement and the balance sheet, it's clear that the company has shown a consistent upward trend in net sales, gross income, and net income over the five-year period (2015-2019). Net sales have increased from approximately 1 billion to 3.8 billion, along with the gross income and net income. This suggests a positive trend in the company's financial performance. Additionally, on the balance sheet, total assets and equity have also increased significantly, indicating growth and consistent reinvestment in the company's equity.
