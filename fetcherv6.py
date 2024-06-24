@@ -136,10 +136,6 @@ def fetch_company_data():
     df.set_index('cvm_code', inplace=True)
     return df
 
-def get_company_name(cvm_code):
-    f = fetch_company_data()
-    selected_row = f.loc[int(cvm_code)]
-    return selected_row.iloc[0]
 
 def fetch_financials(cvm_code):
     """Fetch balance sheet, income statement, and cash flow data for a given cvm_code."""
@@ -177,6 +173,25 @@ def retrieve_balance_with_lenght(cvm_code):
     balance_sheet.columns = [col.lower().replace(" ", "_") for col in balance_sheet.columns]
     y_bs = len(balance_sheet.index.astype(int))
     return {'len':(y_bs),'balance_sheet':balance_sheet}
+
+def net_income_direction(cvm_code):
+    data = retrieve_income_with_lenght(cvm_code)
+    income_statement = data['income_statement']
+    years = income_statement.columns[-5:]  # Get the last 5 years
+    earnings_direction = {} 
+    for i in range(1, len(years)):
+        current_year = years[i]
+        previous_year = years[i - 1]
+        earnings_direction[current_year] = income_statement[current_year] - income_statement[previous_year]
+    earnings_direction = pd.DataFrame(earnings_direction)
+    earnings_direction = earnings_direction.iloc[:, -1]  # Select the last column
+    earnings_direction.index.name = 'Year'  # Set the index name
+    return earnings_direction
+
+def get_company_name(cvm_code):
+    f = fetch_company_data()
+    selected_row = f.loc[int(cvm_code)]
+    return selected_row.iloc[0]
 
 
 if __name__ == "__main__":

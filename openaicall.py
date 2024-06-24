@@ -34,6 +34,23 @@ def create_prompt(income_statement, balance_sheet):
     }}
     """
     return prompt
+def calculate_earnings_direction(cvm_code):
+    data = retrieve_income_with_lenght(cvm_code)
+    income_statement = data['income_statement'].T
+    years = income_statement.columns[-5:]  # Get the last 5 years
+    earnings_direction = {}
+
+    for i in range(1, len(years)):
+        current_year = years[i]
+        previous_year = years[i - 1]
+        earnings_direction[current_year] = income_statement[current_year] - income_statement[previous_year]
+
+    earnings_direction = pd.DataFrame(earnings_direction)
+    earnings_direction = earnings_direction.iloc[:, -1]  # Select the last column
+    earnings_direction.index.name = 'Year'  # Set the index name
+
+    return earnings_direction
+
 
 def get_predictions(company_code):
     # Create a dataframe to store the predictions
