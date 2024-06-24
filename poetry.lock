@@ -2780,6 +2780,21 @@ files = [
 httpx = ">=0.24,<0.28"
 
 [[package]]
+name = "tenacity"
+version = "8.4.2"
+description = "Retry code until it succeeds"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "tenacity-8.4.2-py3-none-any.whl", hash = "sha256:9e6f7cf7da729125c7437222f8a522279751cdfbe6b67bfe64f75d3a348661b2"},
+    {file = "tenacity-8.4.2.tar.gz", hash = "sha256:cd80a53a79336edba8489e767f729e4f391c896956b57140b5d7511a64bbd3ef"},
+]
+
+[package.extras]
+doc = ["reno", "sphinx"]
+test = ["pytest", "tornado (>=4.5)", "typeguard"]
+
+[[package]]
 name = "terminado"
 version = "0.18.1"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
@@ -3113,4 +3128,4 @@ repair = ["scipy (>=1.6.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "6a4008cedfcf9caa8db93305f60e8f1c653bcbd4f3cd7ceda2c5905899f6d0a1"
+content-hash = "520499e819a2800e0f4c2c4135e3dffc35ee1a0e3e2735a886c9090b86e82a77"

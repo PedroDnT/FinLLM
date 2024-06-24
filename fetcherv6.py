@@ -133,7 +133,13 @@ def fetch_company_data():
         logging.warning("No data found in the company table.")
     else:
         logging.info(f"Successfully fetched {len(df)} rows from the company table.")
+    df.set_index('cvm_code', inplace=True)
     return df
+
+def get_company_name(cvm_code):
+    f = fetch_company_data()
+    selected_row = f.loc[int(cvm_code)]
+    return selected_row.iloc[0]
 
 def fetch_financials(cvm_code):
     """Fetch balance sheet, income statement, and cash flow data for a given cvm_code."""
@@ -171,6 +177,7 @@ def retrieve_balance_with_lenght(cvm_code):
     balance_sheet.columns = [col.lower().replace(" ", "_") for col in balance_sheet.columns]
     y_bs = len(balance_sheet.index.astype(int))
     return {'len':(y_bs),'balance_sheet':balance_sheet}
+
 
 if __name__ == "__main__":
     # Example usage

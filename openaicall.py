@@ -48,19 +48,7 @@ def get_predictions(company_code):
 
     is_len = income_statement['len']
     is_numbers = income_statement['income_statement']
-    #print(is_numbers)
-    print("income_statement len: " + str(is_len))
-    print()
-    print("income_statement years: " + str(is_numbers))
-    print()
-    print("income_statement years index: " + str(is_numbers.index))
-
-
-    print("balance_sheet years: " + str(bs_len))
-    print()
-    print("balance_sheet years: " + str(bs_numbers))
-    print()
-    print("balance_sheet years index: " + str(bs_numbers.index))
+    
 
     is_numbers.index = is_numbers.index.astype(int)
     bs_numbers.index = bs_numbers.index.astype(int)
