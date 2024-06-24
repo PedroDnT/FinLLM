@@ -51,7 +51,6 @@ def calculate_earnings_direction(cvm_code):
 
     return earnings_direction
 
-
 def get_predictions(company_code):
     # Create a dataframe to store the predictions
     predictions = pd.DataFrame()
