@@ -5,10 +5,17 @@ import requests
 import json
 import pandas as pd
 
+
+system_prompt=f"""As a seasoned Brazilian financial analyst, your expertise lies in interpreting financial reports to assess company health and predict future earnings. 
+Analyze financial data, utilize key ratios and historical trends to forecast performance, and present your findings concisely."""
+
 def create_prompt(income_statement, balance_sheet):
     prompt = f"""
+    Analyze the balance sheet, income statement, and cash flow statement of this company to assess its financial health and performance. 
+    Identify key financial ratios and trends to provide a comprehensive overview of its financial position.
     Analyze the following financial statements to predict if the company's earnings will increase or decrease next year.
-    Follow these steps in your analysis:
+    Identify patterns, anomalies, and potential risks or opportunities for future growtha comprehensive assessment of its financial health
+    Follow these steps in your analysis.
 
     1. Read through the financial statement items and identify notable trends and changes.
     2. Compute financial ratios useful for the analysis.
@@ -95,7 +102,7 @@ def get_predictions(company_code):
             temperature=0,
             top_p=1,
             messages=[
-                {"role": "system", "content": "You are a financial analyst."},
+                {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt}
             ],
             max_tokens=500,
